@@ -42,7 +42,7 @@ def follower_list(driver, url):
             #     follower_list.append(follower)
             more.click()
             print('clicked')
-            time.sleep(1.5)
+            time.sleep(3)
         except:
             print('click comp')
             break
@@ -88,7 +88,7 @@ def get_user_data(follower_url_list):
         if(len(follower_datas) % 10 == 0 or len(follower_datas) == len(follower_url_list)):
             print(progress)
 
-        time.sleep(2)
+        time.sleep(10)
 
     return follower_datas
 
