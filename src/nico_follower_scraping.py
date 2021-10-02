@@ -33,7 +33,7 @@ def follower_list(driver, url):
     while True:
         try:
             # さらに表示のクリック前で読み込んで、部分的に読み込まれない仕様に対応
-            for follower in get_url_list(driver, get_follower_list):
+            for follower in get_url_list(driver, follower_list):
                 follower_list.append(follower)
             more = driver.find_element_by_xpath("//button[@class='ShowMoreList-more']")
             # より正確に読み込みたい場合、下3行のコメントアウトも解除すると良いです（ただしさらに処理が重くなる）
@@ -115,7 +115,7 @@ def k_convert(string):
         return string
 
 driver = init_settings()
-tmp_follower_url_list = follower_list(driver, url)
+tmp_follower_url_list = follower_list(driver, 'https://www.nicovideo.jp/user/2090155/follow/follower?ref=pc_userpage_top')
 follower_url_list = dup_delete(tmp_follower_url_list)
 follower_datas = get_user_data(follower_url_list)
 create_csv(follower_datas)
