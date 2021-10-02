@@ -115,7 +115,7 @@ def k_convert(string):
         return string
 
 driver = init_settings()
-tmp_follower_url_list = follower_list(driver, 'https://www.nicovideo.jp/user/2090155/follow/follower?ref=pc_userpage_top')
+tmp_follower_url_list = follower_list(driver, url)
 follower_url_list = dup_delete(tmp_follower_url_list)
 follower_datas = get_user_data(follower_url_list)
 create_csv(follower_datas)

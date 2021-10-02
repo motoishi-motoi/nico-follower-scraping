@@ -15,7 +15,7 @@
 
 なお、デフォルトではurlが設定されていないので
 
-tmp_follower_url_list = follower_list(driver, 'https://www.nicovideo.jp/user/2090155/follow/follower?ref=pc_userpage_top')
+tmp_follower_url_list = follower_list(driver, url)
 
 この部分のurlを、自分がスクレイピングしたいURLに設定してから使ってください。
 
@@ -23,6 +23,13 @@ tmp_follower_url_list = follower_list(driver, 'https://www.nicovideo.jp/user/209
 
 ちなみにフォロワー一覧、フォロー一覧に対応してます。
 ログイン処理の問題があるので、URLがmypageのものを使わないよう気をつけてください。
+
+### 収集されるデータ
+
+- ユーザー名
+- フォロー数
+- フォロワー数
+- ユーザーページURL
 
 ## 仕様
 
